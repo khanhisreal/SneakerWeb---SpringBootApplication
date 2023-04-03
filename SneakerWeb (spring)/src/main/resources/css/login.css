@@ -1,0 +1,116 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1f1;
+}
+
+.inputs input,
+.inputs button {
+    display: block;
+    margin-bottom: 10px;
+    /* optional: add some space between the elements */
+}
+
+.inputs a {
+    display: inline-block;
+    /* or block, depending on your preference */
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    max-width: 700px;
+    padding: 100px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+form h1{
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+form .alert{
+    padding: 5px;
+    background-color: rgb(253, 179, 179);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 330px;
+    color: rgb(160, 49, 49);
+}
+
+form .inputs input,
+form .inputs button
+{
+    margin: auto;
+}
+
+form .inputs input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+form .inputs button{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: rgb(71, 184, 255);
+    color: white;
+    cursor: pointer;
+}
+
+form .inputs button:hover{
+    background-color: lightskyblue;
+}
+
+form .inputs .element{
+    border-radius: 5px;
+    border: 0.5px solid grey;
+    width: 330px;
+}
+
+form a{
+    text-decoration: none;
+    color: rgb(24, 127, 190);
+}
+
+form a:hover{
+    color: rgb(1, 74, 119);
+    text-decoration: underline;
+}
+
+.remember-me{
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.remember-me input{
+    position: absolute;
+    top: 3.5px;
+    left: -55px;
+}
+
+
+

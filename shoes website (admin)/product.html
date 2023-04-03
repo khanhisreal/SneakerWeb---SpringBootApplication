@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+</head>
+
+<body>
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
+        <div class="sidebar-brand">
+            <h2><span class="las la-shoe-prints"></span><span>Ksneaker</span></h2>
+        </div>
+
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="./index.html"><span class="las la-igloo"></span>
+                        <span>Dashboard</span></a>
+                </li>
+                <li>
+                    <a href="./subscribe.html"><span class="las la-users"></span>
+                        <span>Customer</span></a>
+                </li>
+                <li>
+                    <a href="./product.html" class="active"><span class="las la-clipboard-list"></span>
+                        <span>Products</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-cart-plus"></span>
+                        <span>Orders</span></a>
+                </li>
+                <li>
+                    <a href="./add-product.html"><span class="las la-receipt"></span>
+                        <span>Add products</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-circle"></span>
+                        <span>Accounts</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="las la-clipboard-list"></span>
+                        <span>Tasks</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <span class="las la-bars"></span>
+                </label>
+                Products
+            </h2>
+            <div class="search-wrapper">
+                <span class="las la-search"></span>
+                <input type="search" placeholder="search here">
+            </div>
+
+            <div class="user-wrapper">
+                <img src="./img/admin-avatar.jpg" width="40px" height="40px" alt="">
+                <div>
+                    <h4>Khanh Phan</h4>
+                    <small>Super admin</small>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+        </main>
+    </div>
+
+    <div class="product-list">
+        <div class="container">
+            <div class="search-product single">
+                <h1>Search by name</h1>
+                <input type="text" id="page" placeholder="Page" style="max-width: 40px;">
+                <input type="text" placeholder="Type...">
+                <button>search</button>
+            </div>
+            <div class="single">
+                <div class="product">
+                    <div class="detail">
+                        <h1>Product 1</h1>
+                        <p>Model 1</p>
+                        <p>Price 1</p>
+                    </div>
+                    <img src="./img/Logo_NIKE.svg.webp" alt="">
+                </div>
+                <div class="toolbar">
+                    <div class="id">
+                        <p>Product id: </p>
+                        <p>1</p>
+                    </div>
+                    <div class="buttons">
+                        <button class="edit">edit</button>
+                        <button class="delete">delete</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

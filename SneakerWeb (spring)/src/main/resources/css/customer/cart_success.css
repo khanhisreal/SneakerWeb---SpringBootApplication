@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'iran_sans_bold';
+    src: url('http://localhost:8081/css/customer/fontawesome/webfonts/iran_sans_bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'iran_sans_light';
+    src: url('http://localhost:8081/css/customer/fontawesome/webfonts/iran_sans_light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'iran_sans_medi';
+    src: url('http://localhost:8081/css/customer/fontawesome/webfonts/iran_sans_medi.woff') format('woff');
+}
+
+* {
+    font-family: iran_sans_light;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 60%;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+}
+
+header {
+    display: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgb(179, 179, 204);
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+header .logo {
+    font-size: 2rem;
+    color: #000;
+    font-weight: 500;
+}
+
+header .navbar a {
+    font-size: 1.5rem;
+    color: #000;
+    margin: 0 2rem;
+}
+
+header .navbar a:hover {
+    color: orangered;
+}
+
+header .icons {
+    display: flex;
+}
+
+header .icons .in-cart {
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 13px;
+    background-color: #000;
+    color: white;
+}
+
+header .icons .in-cart p {
+    text-align: center;
+}
+
+header .icons a {
+    font-size: 2rem;
+    color: #000;
+    margin-left: 1.5rem;
+}
+
+header .icons a:hover {
+    color: orangered;
+}
+
+#menu-bar {
+    font-size: 2rem;
+    padding: .5rem 1rem;
+    border: .1rem solid #000;
+    color: #000;
+    border-radius: .3rem;
+    cursor: pointer;
+    display: none;
+}
+/* end header  */
+.payment-succesful{
+    width: 1000px;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-succesful .description .tick{
+    background-color: cadetblue;
+    padding: 20px 0px;
+    width: 600px;
+}
+
+.payment-succesful .description .tick .inner{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.payment-succesful .description .tick .inner p{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.payment-succesful .description h1{
+    text-align: center;
+    padding: 50px 0px 0px 10px;
+    font-size: 20px;
+}
+
+.payment-succesful .description p{
+    text-align: center;
+    font-size: 15px;
+}
+
+.payment-succesful .description .detail {
+    background-color: aliceblue;
+    padding-bottom: 80px;
+}
+
+.payment-succesful .description .detail a{
+    background-color: cadetblue;
+    width: 80px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+}
+
+.payment-succesful .description .detail a:hover{
+    background-color: rgb(106, 184, 187);
+}
+
+
+
+
