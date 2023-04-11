@@ -1,0 +1,79 @@
+body{
+    margin-top: 60px;
+    background-color: #344a73;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.signup-box{
+    width: 300px;
+    height: 590px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+    padding-top: 21px;
+}
+
+h4{
+    text-align: center;
+}
+
+form{
+    width: 300px;
+    margin: 25px;
+}
+
+form label{
+    display: flex;
+    margin-top: 10px;
+    font-size: 13px;
+    padding-bottom: 5px;
+}
+
+form input{
+    width: 80%;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+    padding: 3px;
+}
+
+button{
+    width: 80%;
+    height: 35px;
+    margin-top: 20px;
+    background-color: #49c124;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color:  #3eb31a;
+    cursor: pointer;
+}
+
+p{
+    margin: 10px;
+    text-align: center;
+    font-size: 13px;
+}
+p a{
+    font-weight: bold;
+}
+
+.para-2{
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+.para-2 a{
+    color: #49c124;
+    font-weight: bold;
+}

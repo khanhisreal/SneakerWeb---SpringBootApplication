@@ -40,7 +40,7 @@
 			<div class="in-cart">
 				<p id="amount">${amount }</p>
 			</div>
-			<a href="#"><i class="fa fa-user"></i></a>
+			<a href="${base }/login"><i class="fa fa-user"></i></a>
 		</div>
 	</header>
 	<!--end header-->

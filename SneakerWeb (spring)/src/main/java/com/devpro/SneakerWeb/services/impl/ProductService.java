@@ -173,7 +173,7 @@ public class ProductService extends BaseService<Product> {
 
 	public PagerData<Product> searchProduct(ProductSearch searchModel) {
 		// khởi tạo câu lệnh
-		String sql = "SELECT * FROM product p WHERE 1=1  AND status !=0";
+		String sql = "SELECT * FROM product p WHERE 1=1 AND status !=0";
 
 		if (searchModel != null) {
 			// tìm kiếm theo tên

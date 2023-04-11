@@ -43,18 +43,24 @@
 			<ul>
 				<li><a href="${base}/admin/home" class=""><span
 						class="las la-igloo"></span> <span>Dashboard</span></a></li>
-				<li><a href="${base }/admin/subscribe"><span class="las la-users"></span> <span>Customer</span></a>
+				<li><a href="${base }/admin/subscribe"><span
+						class="las la-users"></span> <span>Customer</span></a></li>
+				<li><a href=""><span class="las la-cart-plus"></span> <span>Orders</span></a>
 				</li>
 				<li><a href="${base}/admin/product/list" class="active"><span
 						class="las la-clipboard-list"></span> <span>Products</span></a></li>
-				<li><a href=""><span class="las la-cart-plus"></span> <span>Orders</span></a>
-				</li>
 				<li><a href="${base}/admin/product/management"><span
 						class="las la-receipt"></span> <span>Add products</span></a></li>
-				<li><a href=""><span class="las la-circle"></span> <span>Accounts</span></a>
-				</li>
-				<li><a href=""><span class="las la-clipboard-list"></span>
-						<span>Tasks</span></a></li>
+				<li>
+                    <a href="./voucher.html"><span class="las la-clipboard-list"></span>
+                        <span>Voucher</span></a>
+                </li>
+                <li>
+                    <a href="${base }/admin/add-voucher" ><span class="las la-receipt"></span>
+                        <span>Add Voucher</span></a>
+                </li>
+				<li><a href="${base }/logout"><span class="las la-sign-out-alt"></span>
+						<span>Log out</span></a></li>
 			</ul>
 		</div>
 
@@ -101,43 +107,49 @@
 						value="Search">search</button>
 				</div>
 			</form>
-				<!-- Danh sách sản phẩm -->
-				<c:forEach items="${products.data}" var="product" varStatus="loop">
-					<div class="single">
-						<div class="product">
-							<div class="detail">
-								<!-- product name -->
-								<h1 id="name">${product.name }</h1>
-								<!-- model -->
-								<p id="description">${product.description }</p>
-								<!-- price -->
-								<p  id="price" >Price:
-									<fmt:setLocale value="en_US" scope="session" />
-									<fmt:formatNumber value="${product.price }" type="currency"
-										pattern="USD #,###.##;USD -#,###.##" currencySymbol="USD" />
-								</p>
-							</div>
-							<img src="${base }/upload/${product.location}" alt="" id="location">
+			<!-- Danh sách sản phẩm -->
+			<c:forEach items="${products.data}" var="product" varStatus="loop">
+				<div class="single">
+					<div class="product">
+						<div class="detail">
+							<!-- product name -->
+							<h1 id="name">${product.name }</h1>
+							<!-- model -->
+							<p id="description">${product.description }</p>
+							<!-- price -->
+							<p id="price">
+								Price:
+								<fmt:setLocale value="en_US" scope="session" />
+								<fmt:formatNumber value="${product.price }" type="currency"
+									pattern="USD #,###.##;USD -#,###.##" currencySymbol="USD" />
+							</p>
 						</div>
-						<div class="toolbar">
-							<div class="id">
-								<p>Product id:</p>
-								<!-- product id -->
-								<p id="id">&nbsp${product.id }</p>
-							</div>
-							<div class="buttons">
-								<button class="edit" type="button"><a href="/admin/product/management/${product.id }" style="color: black">edit</a></button>
-								<button class="delete" type="button" onclick="deleteFromList(${product.id})"> delete</button>
-							</div>
-						</div>
+						<img src="${base }/upload/${product.location}" alt=""
+							id="location">
 					</div>
-				</c:forEach>
-				<!-- phân trang -->
-				<div class="row">
-					<div class="col-12 d-flex justify-content-center">
-						<div id="paging"></div>
+					<div class="toolbar">
+						<div class="id">
+							<p>Product id:</p>
+							<!-- product id -->
+							<p id="id">&nbsp${product.id }</p>
+						</div>
+						<div class="buttons">
+							<button class="edit" type="button">
+								<a href="/admin/product/management/${product.id }"
+									style="color: black">edit</a>
+							</button>
+							<button class="delete" type="button"
+								onclick="deleteFromList(${product.id})">delete</button>
+						</div>
 					</div>
 				</div>
+			</c:forEach>
+			<!-- phân trang -->
+			<div class="row">
+				<div class="col-12 d-flex justify-content-center">
+					<div id="paging"></div>
+				</div>
+			</div>
 
 		</div>
 	</div>

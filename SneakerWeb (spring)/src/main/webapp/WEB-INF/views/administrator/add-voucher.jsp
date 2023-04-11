@@ -1,4 +1,3 @@
-<!-- import sf: spring-form -->
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 
 
@@ -10,23 +9,21 @@
 <!-- pageContext.servletContext.contextPath <=> http://localhost:8080 -->
 <c:set var="base" value="${pageContext.servletContext.contextPath}"></c:set>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maxium-scale=1">
-<link rel="stylesheet" href="${base }/css/admin/add-product.css">
-<link rel="stylesheet"
-	href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-<title>Add products</title>
-<script src="${base }/js/admin/script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maxium-scale=1">
+    <link rel="stylesheet" href="${base }/css/admin/add-voucher.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <title>Add vouchers</title>
+    <script src="${base }/js/admin/script.js" defer></script>
 </head>
 <body>
-	<input type="checkbox" id="nav-toggle">
-	<div class="sidebar">
+    <input type="checkbox" id="nav-toggle">
+    <div class="sidebar">
 		<div class="sidebar-brand">
 			<h2>
 				<span class="las la-shoe-prints"></span><span>Ksneaker</span>
@@ -43,14 +40,14 @@
 				</li>
 				<li><a href="${base}/admin/product/list"><span
 						class="las la-clipboard-list"></span> <span>Products</span></a></li>
-				<li><a href="${base}/admin/product/management" class="active"><span
+				<li><a href="${base}/admin/product/management"><span
 						class="las la-receipt"></span> <span>Add products</span></a></li>
 				<li>
                     <a href="./voucher.html"><span class="las la-clipboard-list"></span>
                         <span>Voucher</span></a>
                 </li>
                 <li>
-                    <a href="${base }/admin/add-voucher" ><span class="las la-receipt"></span>
+                    <a href="${base }/admin/add-voucher" class="active"><span class="las la-receipt"></span>
                         <span>Add Voucher</span></a>
                 </li>
 				<li><a href="${base }/logout"><span class="las la-sign-out-alt"></span>
@@ -62,7 +59,7 @@
 			<header>
 				<h2>
 					<label for="nav-toggle"> <span class="las la-bars"></span>
-					</label> Add/Update products
+					</label> Add/Update vouchers
 				</h2>
 				<div class="search-wrapper">
 					<span class="las la-search"></span> <input type="search"
@@ -81,35 +78,21 @@
 		</div>
 	</div>
 
-	<section class="form">
-		<div class="container">
-			<div class="contact-box">
-				<div class="left"></div>
-				<div class="right">
-					<sf:form enctype="multipart/form-data" modelAttribute="product"
-						action="${base}/admin/product/management/saveOrUpdate"
-						method="post">
-						<h2>Add/Update product</h2>
-						<sf:input path="id" type="text" class="field" placeholder="Id"></sf:input>
-						<sf:input path="name" type="text" class="field"
-							placeholder="Product name"></sf:input>
-						<sf:input path="description" type="text" class="field"
-							placeholder="Description"></sf:input>
-						<sf:input path="price" type="text" class="field"
-							placeholder="Price"></sf:input>
-						<!-- avatar -->
-						<label for="avatar">Avatar</label>
-						<input path="location" type="file" class="field"
-							name="productAvatar">
-						<!-- ảnh cover -->
-						<label for="fileProductPictures">Picture(Multiple)</label>
-						<input type="file" id="fileProductPictures" name="productPictures"
-							class="field" multiple="multiple">
-						<button class="btn" type="submit">Send</button>
-					</sf:form>
-				</div>
-			</div>
-		</div>
-	</section>
+    
+    <section class="form">
+        <div class="container">
+            <div class="contact-box">
+                <div class="left"></div>
+                <div class="right">
+                    <h2>Add/Update Voucher</h2>
+                    <input type="text" class="field" placeholder="Id">
+                    <input type="text" class="field" placeholder="Voucher name">
+                    <input type="text" class="field" placeholder="Description">
+                    <input type="text" class="field" placeholder="Discount percentage">
+                    <button class="btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

@@ -13,7 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f1f1f1f1;
+  background-color: #344a73;
 }
 
 .inputs input,
@@ -76,13 +76,13 @@ form .inputs button{
     padding: 10px;
     margin-bottom: 10px;
     width: 100%;
-    background-color: rgb(71, 184, 255);
+    background-color: #49c124;
     color: white;
     cursor: pointer;
 }
 
 form .inputs button:hover{
-    background-color: lightskyblue;
+     background-color:  #3eb31a;
 }
 
 form .inputs .element{

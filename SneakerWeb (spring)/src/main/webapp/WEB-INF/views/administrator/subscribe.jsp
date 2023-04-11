@@ -43,16 +43,24 @@
 						class="las la-igloo"></span> <span>Dashboard</span></a></li>
 				<li><a href="${base }/admin/subscribe" class="active"><span
 						class="las la-users"></span> <span>Customer</span></a></li>
-				<li><a href="${base}/admin/product/list"><span
-						class="las la-clipboard-list"></span> <span>Products</span></a></li>
 				<li><a href=""><span class="las la-cart-plus"></span> <span>Orders</span></a>
 				</li>
+				<li><a href="${base}/admin/product/list"><span
+						class="las la-clipboard-list"></span> <span>Products</span></a></li>
 				<li><a href="${base}/admin/product/management"><span
 						class="las la-receipt"></span> <span>Add products</span></a></li>
-				<li><a href=""><span class="las la-circle"></span> <span>Accounts</span></a>
-				</li>
-				<li><a href=""><span class="las la-clipboard-list"></span>
-						<span>Tasks</span></a></li>
+				<li>
+                    <a href="./voucher.html"><span class="las la-clipboard-list"></span>
+                        <span>Voucher</span></a>
+                </li>
+                <li>
+                    <a href="${base }/admin/add-voucher" ><span class="las la-receipt"></span>
+                        <span>Add Voucher</span></a>
+                </li>
+				 <li>
+                    <a href="${base }/logout" ><span class="las la-sign-out-alt"></span>
+                        <span>Log out</span></a>
+                </li>
 			</ul>
 		</div>
 
@@ -95,24 +103,24 @@
 		<section class="table">
 			<div class="table-heading single">
 				<thead class="heading">
-					 <tr>
-                        <div class="left">
-                            <th>
-                                <p>id</p>
-                            </th>
-                            <th>
-                                <p>avatar</p>
-                            </th>
-                            <th>
-                                <p>email</p>
-                            </th>
-                        </div>
-                        <div class="right">
-                            <th>
-                                <p>action</p>
-                            </th>
-                        </div>
-                    </tr>
+					<tr>
+						<div class="left">
+							<th>
+								<p>id</p>
+							</th>
+							<th>
+								<p>avatar</p>
+							</th>
+							<th>
+								<p>email</p>
+							</th>
+						</div>
+						<div class="right">
+							<th>
+								<p>action</p>
+							</th>
+						</div>
+					</tr>
 				</thead>
 			</div>
 

@@ -22,15 +22,15 @@
 				</div>
 			</c:if>
 			<div class="inputs">
-				<input class="element" name="username" type="text" placeholder="Username">
-				<input class="element" name="password" type="password" placeholder="Password">
+				<input class="element" name="username" type="text" placeholder="Username" required>
+				<input class="element" name="password" type="password" placeholder="Password" required>
 				<div class="remember-me">
                     <label for="checkbox">Remember me:</label>
                     <input type="checkbox" name="remember-me" id="">
                 </div>
 				<button class="element" type="submit">Login</button>
 			</div>
-			<a href="">Create your account</a>
+			<a href="${base }/register">Create your account</a>
 		</form>
 	</div>
 </body>

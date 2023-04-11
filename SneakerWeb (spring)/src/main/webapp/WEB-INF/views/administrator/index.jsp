@@ -38,24 +38,28 @@
                         <span>Customer</span></a>
                 </li>
                 <li>
-                    <a href="${base}/admin/product/list"><span class="las la-clipboard-list"></span>
-                        <span>Products</span></a>
-                </li>
-                <li>
                     <a href=""><span class="las la-cart-plus"></span>
                         <span>Orders</span></a>
+                </li>
+                <li>
+                    <a href="${base}/admin/product/list"><span class="las la-clipboard-list"></span>
+                        <span>Products</span></a>
                 </li>
                 <li>
                     <a href="${base}/admin/product/management"><span class="las la-receipt"></span>
                         <span>Add products</span></a>
                 </li>
-                <li>
-                    <a href=""><span class="las la-circle"></span>
-                        <span>Accounts</span></a>
+               <li>
+                    <a href="./voucher.html"><span class="las la-clipboard-list"></span>
+                        <span>Voucher</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-clipboard-list"></span>
-                        <span>Tasks</span></a>
+                    <a href="${base }/admin/add-voucher" ><span class="las la-receipt"></span>
+                        <span>Add Voucher</span></a>
+                </li>
+                 <li>
+                    <a href="${base }/logout" ><span class="las la-sign-out-alt"></span>
+                        <span>Log out</span></a>
                 </li>
             </ul>
         </div>

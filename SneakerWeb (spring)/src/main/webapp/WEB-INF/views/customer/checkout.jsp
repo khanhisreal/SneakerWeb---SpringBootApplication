@@ -36,7 +36,7 @@
 			<div class="in-cart">
 				<p id="amount">${amount }</p>
 			</div>
-			<a href="#"><i class="fa fa-user"></i></a>
+			<a href="${base }/login"><i class="fa fa-user"></i></a>
 		</div>
 	</header>
 	<!--end header-->
@@ -78,17 +78,17 @@
 								<label for="name">name</label> <input type="text" id="name"
 									name="name" value="${userLogined.username }" placeholder="type name..."> <label
 									for="email">email</label> <input type="email" id="email"
-									name="email" value="${userLogined.email }" placeholder="type email..."> <label
+									name="email" value="${userLogined.email }" placeholder="type email..." required> <label
 									for="phone">phone</label> <input type="text" id="phone"
-									name="phone" placeholder="type phone number..."> <label
+									name="phone" value="${userLogined.phone }" placeholder="type phone number..." required> <label
 									for="address">address</label> <input type="text" id="address"
-									name="address" placeholder="type address...">
+									name="address" value="${userLogined.shippingAddress }" placeholder="type address..." required>
 							</form>
 						</c:when>
 						<c:otherwise>
 							<form action="">
 								<label for="name">name</label> <input type="text" id="name"
-									name="name" placeholder="type name..."> <label
+									name="name" placeholder="type name..." required> <label
 									for="email">email</label> <input type="email" id="email"
 									name="email" placeholder="type email..."> <label
 									for="phone">phone</label> <input type="text" id="phone"
