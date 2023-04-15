@@ -55,6 +55,9 @@ function calculate() {
     currentTotal.innerHTML = "$" + total;
 }
 
+function calculateFinalPrice() {
+    
+}
 
 
 
