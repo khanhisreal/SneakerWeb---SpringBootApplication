@@ -1,6 +1,5 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 
-
 <!-- import JSTL -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -12,18 +11,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maxium-scale=1">
-    <link rel="stylesheet" href="${base }/css/admin/add-voucher.css">
-    <link rel="stylesheet"
-        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <title>Add vouchers</title>
-    <script src="${base }/js/admin/script.js" defer></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maxium-scale=1">
+<link rel="stylesheet" href="${base }/css/admin/add-voucher.css">
+<link rel="stylesheet"
+	href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<title>Add vouchers</title>
+<script src="${base }/js/admin/script.js" defer></script>
 </head>
 <body>
-    <input type="checkbox" id="nav-toggle">
-    <div class="sidebar">
+	<input type="checkbox" id="nav-toggle">
+	<div class="sidebar">
 		<div class="sidebar-brand">
 			<h2>
 				<span class="las la-shoe-prints"></span><span>Ksneaker</span>
@@ -42,16 +42,12 @@
 						class="las la-clipboard-list"></span> <span>Products</span></a></li>
 				<li><a href="${base}/admin/product/management"><span
 						class="las la-receipt"></span> <span>Add products</span></a></li>
-				<li>
-                    <a href="./voucher.html"><span class="las la-clipboard-list"></span>
-                        <span>Voucher</span></a>
-                </li>
-                <li>
-                    <a href="${base }/admin/add-voucher" class="active"><span class="las la-receipt"></span>
-                        <span>Add Voucher</span></a>
-                </li>
-				<li><a href="${base }/logout"><span class="las la-sign-out-alt"></span>
-						<span>Log out</span></a></li>
+				<li><a href="${base }/admin/voucher"><span
+						class="las la-clipboard-list"></span> <span>Voucher</span></a></li>
+				<li><a href="${base }/admin/add-voucher" class="active"><span
+						class="las la-receipt"></span> <span>Add Voucher</span></a></li>
+				<li><a href="${base }/logout"><span
+						class="las la-sign-out-alt"></span> <span>Log out</span></a></li>
 			</ul>
 		</div>
 
@@ -78,21 +74,23 @@
 		</div>
 	</div>
 
-    
-    <section class="form">
-        <div class="container">
-            <div class="contact-box">
-                <div class="left"></div>
-                <div class="right">
-                    <h2>Add/Update Voucher</h2>
-                    <input type="text" class="field" placeholder="Id">
-                    <input type="text" class="field" placeholder="Voucher name">
-                    <input type="text" class="field" placeholder="Description">
-                    <input type="text" class="field" placeholder="Discount percentage">
-                    <button class="btn">Send</button>
-                </div>
-            </div>
-        </div>
-    </section>
+
+	<section class="form">
+		<div class="container">
+			<div class="contact-box">
+				<div class="left"></div>
+				<div class="right">
+					<sf:form modelAttribute="voucher" action="${base }/admin/add-voucher" method="post" >
+						<h2>Add/Update Voucher</h2>
+						<sf:input path="id" type="text" class="field" placeholder="Id"></sf:input>
+						<sf:input path="name" type="text" class="field" placeholder="Voucher name"></sf:input>
+						<sf:input path="description" type="text" class="field" placeholder="Description"></sf:input>
+						<sf:input path="discount" type="text" class="field" placeholder="Discount percentage"></sf:input>
+						<button class="btn" type="submit">Send</button>
+					</sf:form>
+				</div>
+			</div>
+		</div>
+	</section>
 </body>
 </html>

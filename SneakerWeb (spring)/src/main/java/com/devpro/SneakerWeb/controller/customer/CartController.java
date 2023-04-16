@@ -222,12 +222,11 @@ public class CartController extends BaseController {
 //		System.err.println(cartItem.getProductId());
 //		cartItems.forEach(System.err::print);
 //		System.err.println();
-
+		
 		for (CartItem item : cartItems) {
 			if (item.getProductId() == cartItem.getProductId()) {
 				// tăng số lượng sản phẩm lên
 				item.setQuantity(item.getQuantity() + cartItem.getQuantity());
-
 				break;
 			}
 		}
