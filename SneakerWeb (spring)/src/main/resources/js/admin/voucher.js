@@ -14,7 +14,7 @@ function deleteVoucher(url_, voucherId) {
 		dataType: "json", 				   // kiểu dữ liệu trả về từ Controller
 		success: function(jsonResult) {    // gọi ajax thành công
 			alert(jsonResult.statusMessage);
-			location.reload;
+			location.reload();
 		},								   // gọi ajax thất bại
 		error: function(jqXhr, textStatus, errorMessage) { 
 			alert("error");

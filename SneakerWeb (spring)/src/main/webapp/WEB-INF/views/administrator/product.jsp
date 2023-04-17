@@ -52,7 +52,7 @@
 				<li><a href="${base}/admin/product/management"><span
 						class="las la-receipt"></span> <span>Add products</span></a></li>
 				<li>
-                    <a href="${base }/admin/voucher"><span class="las la-clipboard-list"></span>
+                    <a href="${base}/admin/voucher"><span class="las la-clipboard-list"></span>
                         <span>Voucher</span></a>
                 </li>
                 <li>

@@ -42,11 +42,11 @@
 						class="las la-clipboard-list"></span> <span>Products</span></a></li>
 				<li><a href="${base}/admin/product/management"><span
 						class="las la-receipt"></span> <span>Add products</span></a></li>
-				<li><a href="${base }/admin/voucher"><span
+				<li><a href="${base}/admin/voucher"><span
 						class="las la-clipboard-list"></span> <span>Voucher</span></a></li>
-				<li><a href="${base }/admin/add-voucher" class="active"><span
+				<li><a href="${base}/admin/add-voucher" class="active"><span
 						class="las la-receipt"></span> <span>Add Voucher</span></a></li>
-				<li><a href="${base }/logout"><span
+				<li><a href="${base}/logout"><span
 						class="las la-sign-out-alt"></span> <span>Log out</span></a></li>
 			</ul>
 		</div>
