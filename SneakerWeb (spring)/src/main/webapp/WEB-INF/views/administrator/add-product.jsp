@@ -34,7 +34,7 @@
 		</div>
 
 		<div class="sidebar-menu">
-			<ul>
+			  <ul>
 				<li><a href="${base}/admin/home" class=""><span
 						class="las la-igloo"></span> <span>Dashboard</span></a></li>
 				<li><a href="${base }/admin/subscribe"><span
@@ -46,11 +46,11 @@
 				<li><a href="${base}/admin/product/management" class="active"><span
 						class="las la-receipt"></span> <span>Add products</span></a></li>
 				<li>
-                    <a href="./voucher.html"><span class="las la-clipboard-list"></span>
+                    <a href="${base }/admin/voucher"><span class="las la-clipboard-list"></span>
                         <span>Voucher</span></a>
                 </li>
                 <li>
-                    <a href="${base }/admin/add-voucher" ><span class="las la-receipt"></span>
+                    <a href="${base }/admin/add-voucher"><span class="las la-receipt"></span>
                         <span>Add Voucher</span></a>
                 </li>
 				<li><a href="${base }/logout"><span class="las la-sign-out-alt"></span>

@@ -14,7 +14,7 @@ function updateQuantity(_baseUrl, _productId, _quantity) {
 
 		dataType: "json", 				   // kiểu dữ liệu trả về từ Controller
 		success: function(jsonResult) {    // gọi ajax thành công
-			let prevQuantity = ($(`#quantity${_productId}`).text());//lấy text (ở đây là quantity) 
+			let prevQuantity = ($(`#quantity${_productId}`).text());//lấy text (ở đây là quantity)
 			$(`#quantity${_productId}`).html(parseInt(prevQuantity) + _quantity);// lay cai text tren cong hoac tru 1
 			$("#amount").html(jsonResult.totalItems);
 			location.reload();

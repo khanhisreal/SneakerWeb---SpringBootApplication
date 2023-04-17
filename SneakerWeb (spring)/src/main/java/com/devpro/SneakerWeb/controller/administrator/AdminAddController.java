@@ -76,7 +76,7 @@ public class AdminAddController extends BaseController{
 		}
 		
 		//trả về view (list)
-		return "redirect:/admin-add/product/list";
+		return "redirect:/admin/product/list";
 	}
 	
 	@RequestMapping(value = {"/admin/product/list"}, method = RequestMethod.GET)
@@ -111,7 +111,7 @@ public class AdminAddController extends BaseController{
 		
 		Map<String, Object> jsonResult = new HashMap<>();
 		jsonResult.put("statusCode", 200);
-		jsonResult.put("statusMessage", "Đã xóa thành công");
+		jsonResult.put("statusMessage", "Delete product successfully!");
 		return ResponseEntity.ok(jsonResult);
 	}
 	

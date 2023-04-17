@@ -28,40 +28,28 @@
         </div>
 
         <div class="sidebar-menu">
-            <ul>
-                <li>
-                    <a href="${base}/admin/home" class="active"><span class="las la-igloo"></span>
-                        <span>Dashboard</span></a>
-                </li>
-                <li>
-                    <a href="${base }/admin/subscribe"><span class="las la-users"></span>
-                        <span>Customer</span></a>
-                </li>
-                <li>
-                    <a href=""><span class="las la-cart-plus"></span>
-                        <span>Orders</span></a>
-                </li>
-                <li>
-                    <a href="${base}/admin/product/list"><span class="las la-clipboard-list"></span>
-                        <span>Products</span></a>
-                </li>
-                <li>
-                    <a href="${base}/admin/product/management"><span class="las la-receipt"></span>
-                        <span>Add products</span></a>
-                </li>
-               <li>
-                    <a href="./voucher.html"><span class="las la-clipboard-list"></span>
+             <ul>
+				<li><a href="${base}/admin/home" class="active"><span
+						class="las la-igloo"></span> <span>Dashboard</span></a></li>
+				<li><a href="${base }/admin/subscribe"><span
+						class="las la-users"></span> <span>Customer</span></a></li>
+				<li><a href=""><span class="las la-cart-plus"></span> <span>Orders</span></a>
+				</li>
+				<li><a href="${base}/admin/product/list"><span
+						class="las la-clipboard-list"></span> <span>Products</span></a></li>
+				<li><a href="${base}/admin/product/management"><span
+						class="las la-receipt"></span> <span>Add products</span></a></li>
+				<li>
+                    <a href="${base }/admin/voucher"><span class="las la-clipboard-list"></span>
                         <span>Voucher</span></a>
                 </li>
                 <li>
-                    <a href="${base }/admin/add-voucher" ><span class="las la-receipt"></span>
+                    <a href="${base }/admin/add-voucher"><span class="las la-receipt"></span>
                         <span>Add Voucher</span></a>
                 </li>
-                 <li>
-                    <a href="${base }/logout" ><span class="las la-sign-out-alt"></span>
-                        <span>Log out</span></a>
-                </li>
-            </ul>
+				<li><a href="${base }/logout"><span class="las la-sign-out-alt"></span>
+						<span>Log out</span></a></li>
+			</ul>
         </div>
     </div>
 
@@ -91,7 +79,7 @@
             <div class="cards">
                 <div class="card-single">
                     <div>
-                        <h1>54</h1>
+                        <h1>${customersCount }</h1>
                         <span>Customer</span>
                     </div>
                     <div>
@@ -100,7 +88,7 @@
                 </div>
                 <div class="card-single">
                     <div>
-                        <h1>69</h1>
+                        <h1>${productsCount }</h1>
                         <span>Products</span>
                     </div>
                     <div>
@@ -140,59 +128,35 @@
                                 <thead>
                                     <tr>
                                         <td>Brand</td>
-                                        <td>Model</td>
+                                        <td>Category</td>
                                         <td>Price</td>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <c:forEach items="${newArrivals }" var="newArrival" varStatus="loop">
+                                    <c:choose>
+                                    <c:when test="${loop.index % 2 == 0}">
                                     <tr>
-                                        <td>Nike</td>
-                                        <td>Air Jordan</td>
+                                        <td>${newArrival.name }</td>
+                                        <td>Nike shoes</td>
                                         <td>
                                             <span class="status purple"></span>
-                                            $349
+                                            $${newArrival.price }
                                         </td>
                                     </tr>
+                                    </c:when>
+                                    <c:otherwise>
                                     <tr>
-                                        <td>Adidas</td>
-                                        <td>Superstar</td>
+                                        <td>${newArrival.name }</td>
+                                        <td>Nike shoes</td>
                                         <td>
                                             <span class="status pink"></span>
-                                            $110
+                                            $${newArrival.price }
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>Doctor Martens</td>
-                                        <td>Oxford</td>
-                                        <td>
-                                            <span class="status orange"></span>
-                                            $349
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Puma</td>
-                                        <td>MTV</td>
-                                        <td>
-                                            <span class="status purple"></span>
-                                            $249
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bape</td>
-                                        <td>Sta</td>
-                                        <td>
-                                            <span class="status pink"></span>
-                                            $439
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>The wolf</td>
-                                        <td>Modern Derby</td>
-                                        <td>
-                                            <span class="status orange"></span>
-                                            $98
-                                        </td>
-                                    </tr>
+                                    </c:otherwise>
+                                    </c:choose>
+                                    </c:forEach>
                                 </tbody>
                             </table>
                            </div>
