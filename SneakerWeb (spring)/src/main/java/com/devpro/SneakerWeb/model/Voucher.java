@@ -3,11 +3,12 @@ package com.devpro.SneakerWeb.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Objects;
 
 @Entity
 @Table(name = "voucher")
 public class Voucher extends BaseEntity{
-	
+
 	@Column(name = "name", length = 45, nullable = false)
 	private String name;
 	
@@ -40,5 +41,4 @@ public class Voucher extends BaseEntity{
 	public void setDiscount(Integer discount) {
 		this.discount = discount;
 	}
-	
 }

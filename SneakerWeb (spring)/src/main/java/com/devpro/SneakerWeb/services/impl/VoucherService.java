@@ -29,4 +29,5 @@ public class VoucherService extends BaseService<Voucher> {
         String sql = "SELECT * FROM voucher";
         return getEntitiesByNativeSQL(sql, 1);
     }
+
 }

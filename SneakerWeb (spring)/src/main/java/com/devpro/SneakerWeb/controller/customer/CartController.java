@@ -25,9 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 public class CartController extends BaseController {
@@ -67,6 +65,7 @@ public class CartController extends BaseController {
         saleOrder.setCustomerAddress(customerAddress);
         saleOrder.setCustomerPhone(customerPhone);
         saleOrder.setCode(String.valueOf(System.currentTimeMillis())); // mã hóa đơn: HD20230314
+        saleOrder.setVouchers(chosenVouchers);
 
         // lấy giỏ hàng
         HttpSession session = request.getSession();
@@ -81,7 +80,6 @@ public class CartController extends BaseController {
             // sử dụng hàm tiện ích add hoặc remove đối với các quan hệ onetomany
             saleOrder.addSaleOrderProducts(saleOrderProducts);
         }
-        saleOrder.setVouchers(chosenVouchers);
 
         // lưu hóa đơn vào database
         saleOrderService.saveOrUpdate(saleOrder);
@@ -101,9 +99,99 @@ public class CartController extends BaseController {
     public String cartCheckout(final Model model, final HttpServletRequest request, final HttpServletResponse response)
             throws IOException {
         final PagerData<Voucher> vouchers = voucherService.searchVoucher();
-        model.addAttribute("vouchers",  vouchers);
+        model.addAttribute("vouchers", vouchers.getData());
         return "customer/checkout";
     }
+
+    @RequestMapping(value = {"/ajax/chooseVoucher"}, method = RequestMethod.POST)
+    public ResponseEntity<?> chooseVoucher(final Model model,
+                                           final HttpServletRequest request,
+                                           final HttpServletResponse response,
+                                           final @RequestBody int voucherId) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("chosenVouchers") == null)
+            session.setAttribute("chosenVouchers", new HashSet<>());
+
+        Set<Voucher> vouchers = (Set<Voucher>) session.getAttribute("chosenVouchers");
+
+        Voucher voucher = voucherService.getById(voucherId);
+        if (voucher != null)
+            vouchers.add(voucher);
+
+        Map<String, Object> jsonResult = new HashMap<String, Object>();
+        jsonResult.put("code", 200);
+        return ResponseEntity.ok(jsonResult);
+    }
+
+    @RequestMapping(value = {"/ajax/voucherChosen"}, method = RequestMethod.POST)
+    public ResponseEntity<?> voucherChosen(final Model model,
+                                           final HttpServletRequest request,
+                                           final HttpServletResponse response,
+                                           final @RequestBody int voucherId) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("chosenVouchers") == null)
+            session.setAttribute("chosenVouchers", new HashSet<>());
+
+        Set<Voucher> vouchers = (Set<Voucher>) session.getAttribute("chosenVouchers");
+
+        boolean chosen = false;
+        for (Voucher voucher : vouchers)
+            if (voucher.getId() == voucherId)
+                chosen = true;
+
+        Map<String, Object> jsonResult = new HashMap<String, Object>();
+        jsonResult.put("code", 200);
+        jsonResult.put("result", chosen);
+        return ResponseEntity.ok(jsonResult);
+    }
+
+    @RequestMapping(value = {"/ajax/unchooseVoucher"}, method = RequestMethod.POST)
+    public ResponseEntity<?> unchooseVoucher(final Model model,
+                                           final HttpServletRequest request,
+                                           final HttpServletResponse response,
+                                           final @RequestBody int voucherId) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("chosenVouchers") == null)
+            session.setAttribute("chosenVouchers", new HashSet<>());
+
+        Set<Voucher> vouchers = (Set<Voucher>) session.getAttribute("chosenVouchers");
+
+        Voucher voucher = voucherService.getById(voucherId);
+        if (voucher != null)
+            vouchers.remove(voucher);
+
+        Map<String, Object> jsonResult = new HashMap<String, Object>();
+        jsonResult.put("code", 200);
+        return ResponseEntity.ok(jsonResult);
+    }
+
+    @RequestMapping(value = {"/ajax/finalPrice"}, method = RequestMethod.POST)
+    public ResponseEntity<?> finalPrice(final Model model,
+                                             final HttpServletRequest request,
+                                             final HttpServletResponse response) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("chosenVouchers") == null)
+            session.setAttribute("chosenVouchers", new HashSet<>());
+
+        Set<Voucher> vouchers = (Set<Voucher>) session.getAttribute("chosenVouchers");
+        Cart cart = (Cart) session.getAttribute("cart");
+        if (cart == null)
+            cart = new Cart();
+
+        double finalPrice = 0;
+        for (CartItem item : cart.getCartItems())
+            finalPrice += item.getPriceUnit().doubleValue();
+        for (Voucher voucher : vouchers)
+            finalPrice = finalPrice - (voucher.getDiscount() * finalPrice / 100);
+
+
+        Map<String, Object> jsonResult = new HashMap<String, Object>();
+        jsonResult.put("code", 200);
+        jsonResult.put("result", finalPrice);
+        return ResponseEntity.ok(jsonResult);
+    }
+
+
 
     @RequestMapping(value = {"/ajax/addToCart"}, method = RequestMethod.POST)
     public ResponseEntity<Map<String, Object>> ajax_AddToCart(final Model model, final HttpServletRequest request,

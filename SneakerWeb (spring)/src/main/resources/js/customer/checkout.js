@@ -51,3 +51,60 @@ function deleteItem(_baseUrl, _productId) {
 
 	});
 }
+
+function clickVoucher(_baseUrl, voucherId) {
+    const checkbox = document.getElementById("voucher-checkbox-" + voucherId)
+    if (checkbox.checked) chooseVoucher(_baseUrl, voucherId)
+    else unchooseVoucher(_baseUrl, voucherId)
+}
+
+function resetFinalPrice(_baseUrl) {
+     jQuery.ajax({
+        url: _baseUrl + "/ajax/finalPrice", 	   //->request mapping định nghĩa bên controller
+        type: "post",					   //-> method type của Request Mapping
+        contentType: "application/json",   //-> nội dung gửi lên dạng json <=> javascript object
+
+        dataType: "json", 				   // kiểu dữ liệu trả về từ Controller
+        success: function(jsonResult) {    // gọi ajax thành công
+            const finalPrice = document.getElementById("final-price-value")
+            finalPrice.innerText = jsonResult.result
+        },
+        error: function(jqXhr, textStatus, errorMessage) { // gọi ajax thất bại
+            alert("error");
+        }
+    });
+ }
+
+function unchooseVoucher(_baseUrl, voucherId) {
+    jQuery.ajax({
+		url: _baseUrl + "/ajax/unchooseVoucher", 	   //->request mapping định nghĩa bên controller
+		type: "post",					   //-> method type của Request Mapping
+		contentType: "application/json",   //-> nội dung gửi lên dạng json <=> javascript object
+		data: JSON.stringify(voucherId), //-> chuyển 1 javascript object thành string json
+
+		dataType: "json", 				   // kiểu dữ liệu trả về từ Controller
+		success: function(jsonResult) {    // gọi ajax thành công
+		    resetFinalPrice(_baseUrl)
+		},
+		error: function(jqXhr, textStatus, errorMessage) { // gọi ajax thất bại
+			alert("error");
+		}
+	});
+}
+
+function chooseVoucher(_baseUrl, voucherId) {
+    jQuery.ajax({
+		url: _baseUrl + "/ajax/chooseVoucher", 	   //->request mapping định nghĩa bên controller
+		type: "post",					   //-> method type của Request Mapping
+		contentType: "application/json",   //-> nội dung gửi lên dạng json <=> javascript object
+		data: JSON.stringify(voucherId), //-> chuyển 1 javascript object thành string json
+
+		dataType: "json", 				   // kiểu dữ liệu trả về từ Controller
+		success: function(jsonResult) {    // gọi ajax thành công
+                resetFinalPrice(_baseUrl)
+		},
+		error: function(jqXhr, textStatus, errorMessage) { // gọi ajax thất bại
+			alert("error");
+		}
+	});
+}

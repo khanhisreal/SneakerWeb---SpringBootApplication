@@ -42,6 +42,7 @@ public class SaleOrder extends BaseEntity {
     private String customer_email;
 
     // danh sách voucher đã được serialized sang json
+    @Column(name = "vouchers", columnDefinition = "LONGTEXT")
     private String vouchers;
 
     @OneToMany(cascade = CascadeType.ALL,

@@ -1,22 +1,16 @@
 @font-face {
-	font-family: 'iran_sans_bold';
-	src:
-		url('http://localhost:8081/css/customer/fontawesome/webfonts/iran_sans_bold.woff')
-		format('woff');
+    font-family: 'iran_sans_bold';
+    src: url('../Fonts/iran_sans_bold.woff') format('woff');
 }
 
 @font-face {
-	font-family: 'iran_sans_light';
-	src:
-		url('http://localhost:8081/css/customer/fontawesome/webfonts/iran_sans_light.woff')
-		format('woff');
+    font-family: 'iran_sans_light';
+    src: url('../Fonts/iran_sans_light.woff') format('woff');
 }
 
 @font-face {
-	font-family: 'iran_sans_medi';
-	src:
-		url('http://localhost:8081/css/customer/fontawesome/webfonts/iran_sans_medi.woff')
-		format('woff');
+    font-family: 'iran_sans_medi';
+    src: url('../Fonts/iran_sans_medi.woff') format('woff');
 }
 
 * {
@@ -107,15 +101,47 @@ header .icons a:hover {
 
 /* end header  */
 .checkout {
-	padding: 10px 50px;
+	padding: 10px 20px;
 	background-color: #f6f6f6;
 }
 
 .checkout .product-info {
 	width: 1300px;
 	margin: auto;
-	padding: 100px;
+	padding-bottom: 70px;
 }
+
+.checkout .voucher-info {
+	width: 1300px;
+	margin: auto;
+	padding-bottom: 70px;
+}
+
+.checkout .voucher-info-row {
+	padding: 10px;
+}
+
+.checkout .final-price {
+	width: 1300px;
+	margin: auto;
+	padding-bottom: 100px;
+}
+
+.checkout .final-price .title {
+	font-size: 15px;
+	padding-right: 5px;
+}
+
+.checkout .final-price .price {
+	font-size: 17px;
+}
+
+td {
+	padding: 15px;
+	text-align: center;
+	vertical-align: middle;
+}
+
 
 table {
 	font-family: arial, sans-serif;

@@ -69,6 +69,81 @@
 					</c:forEach>
 				</table>
 			</div>
+
+            <div class="voucher-info">
+                <table>
+                    <!-- table head -->
+                    <tr>
+                        <th>Voucher</th>
+                        <th>Discount</th>
+                        <th>Use</th>
+                    </tr>
+                    <!-- table row -->
+                    <c:forEach items="${vouchers}" var="voucher">
+                        <div class="voucher-info-row">
+                            <tr>
+                                <td>
+                                    ${voucher.name}
+                                </td>
+                                <td>
+                                    <p>${voucher.discount}%</p>
+                                </td>
+                                <td>
+                                    <input type="checkbox" onclick="clickVoucher('${base }', ${voucher.id});"
+                                    id="voucher-checkbox-${voucher.id}">
+                                     <script>
+                                         function checkIfVoucherWasChosen(_baseUrl, voucherId) {
+                                             jQuery.ajax({
+                                                url: _baseUrl + "/ajax/voucherChosen", 	   //->request mapping định nghĩa bên controller
+                                                type: "post",					   //-> method type của Request Mapping
+                                                contentType: "application/json",   //-> nội dung gửi lên dạng json <=> javascript object
+                                                data: JSON.stringify(voucherId), //-> chuyển 1 javascript object thành string json
+
+                                                dataType: "json", 				   // kiểu dữ liệu trả về từ Controller
+                                                success: function(jsonResult) {    // gọi ajax thành công
+                                                    const checkbox = document.getElementById("voucher-checkbox-" + voucherId)
+                                                     if (jsonResult.result)
+                                                         checkbox.checked = true
+                                                },
+                                                error: function(jqXhr, textStatus, errorMessage) { // gọi ajax thất bại
+                                                    alert("error");
+                                                }
+                                            });
+                                         }
+                                        checkIfVoucherWasChosen('${base }', ${voucher.id})
+                                     </script>
+                                   </input>
+                                </td>
+                            </tr>
+                        </div>
+                    </c:forEach>
+                </table>
+            </div>
+            <div class="final-price">
+                <span class="title">Final price you have to pay:</span>
+                <span class="price"><span id="final-price-value"></span>$</span>
+                          <script>
+                             function getFinalPrice(_baseUrl) {
+                                 jQuery.ajax({
+                                    url: _baseUrl + "/ajax/finalPrice", 	   //->request mapping định nghĩa bên controller
+                                    type: "post",					   //-> method type của Request Mapping
+                                    contentType: "application/json",   //-> nội dung gửi lên dạng json <=> javascript object
+
+                                    dataType: "json", 				   // kiểu dữ liệu trả về từ Controller
+                                    success: function(jsonResult) {    // gọi ajax thành công
+                                        const finalPrice = document.getElementById("final-price-value")
+                                        finalPrice.innerText = jsonResult.result
+                                    },
+                                    error: function(jqXhr, textStatus, errorMessage) { // gọi ajax thất bại
+                                        alert("error");
+                                    }
+                                });
+                             }
+                            getFinalPrice('${base }')
+                         </script>
+            </div>
+
+
 			<div class="bill">
 				<div class="customer-infor">
 					<h1>CUSTOMER CONTACT</h1>
