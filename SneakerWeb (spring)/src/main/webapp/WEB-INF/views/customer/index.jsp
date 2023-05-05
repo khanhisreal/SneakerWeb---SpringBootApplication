@@ -185,11 +185,34 @@
 			New <span>Product</span>
 		</h1>
 
+       <div class="dropdown-sort-product">
+            <button class="dropbtn-sort-product">Sort Products <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+                <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+              </svg> </button>
+            <div class="dropdown-content-sort-product">
+            <a href="${base }/homepage?productSort=PRICE_ASC">Price <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+              </svg> </a>
+            <a href="${base }/homepage?productSort=PRICE_DESC">Price <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+              </svg> </a>
+            <a href="${base }/homepage?productSort=NAME_ASC">Name <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+              </svg> </a>
+            <a href="${base }/homepage?productSort=NAME_DESC">Name <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+              </svg> </a>
+            </div>
+       </div>
+
 		<form action="${base }/homepage">
 			<div class="temp">
 				<input id="pagerData" name="page" type="text" placeholder="ca"
 					style="background-color: black; color: white;"
 					value="${homeProductsDTO.page}">
+                <input id="productSort"  type="text"
+                        style="background-color: black; color: white;"
+                        value="${productSort}">
 				<button type="submit" id="btnSearchCustom" style="cursor: pointer;">Click
 					Me!</button>
 			</div>
@@ -317,6 +340,7 @@
 		        cssStyle: 'light-theme',
 		        onPageClick: function(pageNumber, event) {
 		        	$('#pagerData').val(pageNumber);
+		            $('#productSort').val('${productSort}');
 		        	$('#btnSearchCustom').trigger('click');
 				},
 		    });

@@ -463,3 +463,41 @@ section{
         left: 0;
     }
 }
+
+
+.dropbtn-sort-product {
+    background-color: #000000;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+  }
+
+  .dropdown-sort-product {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content-sort-product {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content-sort-product a {
+    font-size: 13px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content-sort-product a:hover {background-color: #ddd;}
+
+  .dropdown-sort-product:hover .dropdown-content-sort-product {display: block;}
+
+  .dropdown-sort-product:hover .dropbtn-sort-product {background-color: #565656;}

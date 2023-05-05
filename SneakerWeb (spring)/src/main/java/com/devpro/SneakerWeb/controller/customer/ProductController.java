@@ -20,18 +20,17 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @RequestMapping(value = "/homepage/product/detail/{productSeo}/{productSort}", method = RequestMethod.GET)
+    @RequestMapping(value = "/homepage/product/detail/{productSeo}", method = RequestMethod.GET)
     public String showProduct(final Model model,
                               final HttpServletRequest request,
                               final HttpServletResponse response,
-                              @PathVariable("productSeo") String productSeo,
-                              @PathVariable("productSort") String productSort) throws IOException {
+                              @PathVariable("productSeo") String productSeo) throws IOException {
 
         //lấy sản phẩm theo seo
         ProductSearch productSearch = new ProductSearch();
         productSearch.setSeo(productSeo);
 
-        Product product = productService.searchProduct(productSearch, ProductService.Sort.valueOf(productSort)).getData().get(0);
+        Product product = productService.searchProduct(productSearch, null).getData().get(0);
         model.addAttribute("product", product);
 
         return "customer/product-detail";

@@ -199,10 +199,24 @@ public class ProductService extends BaseService<Product> {
         return getEntitiesByNativeSQL(sql, searchModel.getPage());
     }
 
-    public PagerData<Product> productPager(HomeProductsDTO product) {
+    public PagerData<Product> productPager(HomeProductsDTO product, Sort sort) {
         // khởi tạo câu lệnh
         String sql = "SELECT * FROM product WHERE 1=1 AND status != 0";
-
+        if (sort != null)
+            switch (sort) {
+                case NAME_ASC:
+                    sql += " ORDER BY name ASC";
+                    break;
+                case NAME_DESC:
+                    sql += " ORDER BY name DESC";
+                    break;
+                case PRICE_ASC:
+                    sql += " ORDER BY price ASC";
+                    break;
+                case PRICE_DESC:
+                    sql += " ORDER BY price DESC";
+                    break;
+            }
         return getEntitiesByNativeSQL(sql, product.getCurrentPage());
     }
 
@@ -210,6 +224,14 @@ public class ProductService extends BaseService<Product> {
         NAME_ASC,
         NAME_DESC,
         PRICE_ASC,
-        PRICE_DESC
+        PRICE_DESC;
+
+        public static Sort parse(String s) {
+            try {
+                return Sort.valueOf(s);
+            } catch (Throwable e) {
+                return null;
+            }
+        }
     }
 }
