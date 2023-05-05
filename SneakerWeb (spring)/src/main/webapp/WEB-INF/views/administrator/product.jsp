@@ -45,7 +45,7 @@
 						class="las la-igloo"></span> <span>Dashboard</span></a></li>
 				<li><a href="${base }/admin/subscribe"><span
 						class="las la-users"></span> <span>Customer</span></a></li>
-				<li><a href=""><span class="las la-cart-plus"></span> <span>Orders</span></a>
+				<li><a href="${base }/admin/order"><span class="las la-cart-plus"></span> <span>Orders</span></a>
 				</li>
 				<li><a href="${base}/admin/product/list" class="active"><span
 						class="las la-clipboard-list"></span> <span>Products</span></a></li>

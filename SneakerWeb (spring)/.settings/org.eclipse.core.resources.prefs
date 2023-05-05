@@ -3,6 +3,7 @@ encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
 encoding//src/main/webapp/WEB-INF/views/administrator/add-product.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/administrator/index.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/administrator/order.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/administrator/product.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/administrator/subscribe.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/customer/cart_success.jsp=UTF-8
