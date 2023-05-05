@@ -552,7 +552,7 @@ textarea {
 
 .toolbar .id{
     display: flex;
-    padding: 30px;
+    padding: 20px;
 }
 
 .toolbar .id p:nth-child(2) {
@@ -567,4 +567,3 @@ textarea {
 .single{
     margin-bottom: 20px;
 }
-
