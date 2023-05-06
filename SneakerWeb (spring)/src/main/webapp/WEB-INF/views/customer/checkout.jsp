@@ -41,7 +41,7 @@
 	</header>
 	<!--end header-->
 	<section class="checkout">
-		<form action="/cart/checkout" method="post">
+		<form action="${base }/cart/checkout" method="post">
 			<div class="product-info">
 				<table>
 					<!-- table head -->
