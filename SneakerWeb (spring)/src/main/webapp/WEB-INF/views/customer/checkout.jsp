@@ -55,7 +55,7 @@
 					<c:forEach items="${cart.cartItems }" var="ci">
 						<div class="single-row">
 							<tr>
-								<td><img src="${base }/upload/${ci.image}" alt=""
+								<td><img src="${base }/img/upload/${ci.image}" alt=""
 									style="margin: 10px 20px;">
 									<p>${ci.productName }</p></td>
 								<td id="price">$${ci.priceUnit }</td>

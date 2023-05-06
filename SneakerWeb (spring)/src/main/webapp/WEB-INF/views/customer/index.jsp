@@ -224,12 +224,12 @@
 					<div class="small-image">
 						<c:forEach items="${product.productImages }" var="image"
 							varStatus="loop">
-							<img src="${base }/upload/${image.path}" alt=""
+							<img src="${base }/img/upload/${image.path}" alt=""
 								class="featured-image-1">
 						</c:forEach>
 					</div>
 					<div class="big-image">
-						<img src="${base }/upload/${product.location}" alt=""
+						<img src="${base }/img/upload/${product.location}" alt=""
 							class="big-image-1">
 					</div>
 				</div>
