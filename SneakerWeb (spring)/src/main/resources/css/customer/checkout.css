@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'iran_sans_bold';
-    src: url('../Fonts/iran_sans_bold.woff') format('woff');
+    src: url('http://localhost:8081/css/customer/fontawesome/webfonts/iran_sans_bold.woff') format('woff');
 }
 
 @font-face {
     font-family: 'iran_sans_light';
-    src: url('../Fonts/iran_sans_light.woff') format('woff');
+    src: url('http://localhost:8081/css/customer/fontawesome/webfonts/iran_sans_light.woff') format('woff');
 }
 
 @font-face {
     font-family: 'iran_sans_medi';
-    src: url('../Fonts/iran_sans_medi.woff') format('woff');
+    src: url('http://localhost:8081/css/customer/fontawesome/webfonts/iran_sans_medi.woff') format('woff');
 }
 
 * {
@@ -109,12 +109,13 @@ header .icons a:hover {
 	width: 1300px;
 	margin: auto;
 	padding-bottom: 70px;
+	margin-top:70px;
 }
 
 .checkout .voucher-info {
 	width: 1300px;
 	margin: auto;
-	padding-bottom: 70px;
+	padding-bottom: 20px;
 }
 
 .checkout .voucher-info-row {
