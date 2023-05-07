@@ -55,7 +55,7 @@
 					<c:forEach items="${cart.cartItems }" var="ci">
 						<div class="single-row">
 							<tr>
-								<td><img src="${base }/img/upload/${ci.image}" alt=""
+								<td><img src="${base }/upload/${ci.image}" alt=""
 									style="margin: 10px 20px;">
 									<p>${ci.productName }</p></td>
 								<td id="price">$${ci.priceUnit }</td>
@@ -121,7 +121,7 @@
             </div>
             <div class="final-price">
                 <span class="title">Final price you have to pay:</span>
-                <span class="price"><span id="final-price-value"></span>$</span>
+                <span class="price"><span class="final-price-value"></span>$</span>
                           <script>
                              function getFinalPrice(_baseUrl) {
                                  jQuery.ajax({
@@ -131,8 +131,9 @@
 
                                     dataType: "json", 				   // kiểu dữ liệu trả về từ Controller
                                     success: function(jsonResult) {    // gọi ajax thành công
-                                        const finalPrice = document.getElementById("final-price-value")
-                                        finalPrice.innerText = jsonResult.result
+                                        const finalPrices = document.getElementsByClassName("final-price-value")
+                                        for (var i = 0; i < finalPrices.length; i++)
+                                            finalPrices[i].innerText = jsonResult.result
                                     },
                                     error: function(jqXhr, textStatus, errorMessage) { // gọi ajax thất bại
                                         alert("error");
@@ -188,7 +189,7 @@
 					</div>
 					<div class="single">
 						<p>Base</p>
-						<p id="base">$${basePrice }</p>
+						<p id="base"><span class="final-price-value"></span>$</p>
 					</div>
 					<div class="single">
 						<p>Shipping and handling</p>
@@ -200,7 +201,7 @@
 					</div>
 					<div class="single">
 						<p>Total</p>
-						<p id="total">$${basePrice }</p>
+						<p id="total"><span class="final-price-value"></span>$</p>
 					</div>
 					<div class="buttons">
 						<button type="submit">proceed</button>

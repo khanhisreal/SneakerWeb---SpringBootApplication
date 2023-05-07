@@ -124,7 +124,7 @@
 									pattern="USD #,###.##;USD -#,###.##" currencySymbol="USD" />
 							</p>
 						</div>
-						<img src="${base }/img/upload/${product.location}" alt=""
+						<img src="${base }/upload/${product.location}" alt=""
 							id="location">
 					</div>
 					<div class="toolbar">

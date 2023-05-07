@@ -43,7 +43,7 @@
 			<div class="images">
 				<c:forEach items="${product.productImages }" var="image"
 					varStatus="loop">
-					<img src="${base }/img/upload/${image.path}" alt="">
+					<img src="${base }/upload/${image.path}" alt="">
 				</c:forEach>
 			</div>
 			<div class="description">

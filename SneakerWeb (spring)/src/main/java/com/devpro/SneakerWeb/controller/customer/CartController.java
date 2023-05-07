@@ -41,11 +41,13 @@ public class CartController extends BaseController {
 
     // tạo hóa đơn
     @RequestMapping(value = {"/cart/checkout"}, method = RequestMethod.POST)
-    public String cartFinished(final @ModelAttribute("vouchers") List<Voucher> chosenVouchers,
-                               final Model model,
+    public String cartFinished(final Model model,
                                final HttpServletRequest request,
                                final HttpServletResponse response)
             throws IOException {
+        if (request.getSession().getAttribute("chosenVouchers") == null)
+            request.getSession().setAttribute("chosenVouchers", new HashSet<>());
+        Set<Voucher> chosenVouchers = (Set<Voucher>) request.getSession().getAttribute("chosenVouchers");
 
         // Lấy thông tin khách hàng (qua name)
         String customerFullName = request.getParameter("name");

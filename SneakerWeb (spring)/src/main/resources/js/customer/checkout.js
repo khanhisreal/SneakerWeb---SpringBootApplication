@@ -66,8 +66,9 @@ function resetFinalPrice(_baseUrl) {
 
         dataType: "json", 				   // kiểu dữ liệu trả về từ Controller
         success: function(jsonResult) {    // gọi ajax thành công
-            const finalPrice = document.getElementById("final-price-value")
-            finalPrice.innerText = jsonResult.result
+            const finalPrices = document.getElementsByClassName("final-price-value")
+            for (var i = 0; i < finalPrices.length; i++)
+                finalPrices[i].innerText = jsonResult.result
         },
         error: function(jqXhr, textStatus, errorMessage) { // gọi ajax thất bại
             alert("error");

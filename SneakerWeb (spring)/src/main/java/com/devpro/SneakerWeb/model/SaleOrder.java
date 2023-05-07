@@ -7,10 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import javax.persistence.*;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "sale_order")
@@ -54,14 +51,14 @@ public class SaleOrder extends BaseEntity {
         if (vouchers == null)
             return new ArrayList<>();
         try {
-            return new ObjectMapper().readValue(vouchers, new TypeReference<List<Voucher>>() {
+            return new ObjectMapper().readValue(vouchers, new TypeReference<Collection<Voucher>>() {
             });
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public void setVouchers(List<Voucher> vouchers) {
+    public void setVouchers(Collection<Voucher> vouchers) {
         try {
             new ObjectMapper().writeValueAsString(vouchers);
         } catch (JsonProcessingException e) {
